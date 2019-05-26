@@ -121,6 +121,16 @@ else
   > ".eslintrc${config_extension}" # truncates existing file (or creates empty)
 
   echo ${config_opening}'
+  parser: 'babel-eslint',
+  parserOptions: {
+      ecmaVersion: 6,
+      sourceType: 'module',
+      ecmaFeatures: {
+          jsx: true,
+          modules: true,
+          experimentalObjectRestSpread: true
+      }
+  },
   "extends": [
     "airbnb",
     "plugin:prettier/recommended",
@@ -134,13 +144,14 @@ else
     "node": true
   },
   "rules": {
+    "no-use-before-define": ["error", { "variables": false }],
     "jsx-a11y/href-no-hash": ["off"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }],
     "max-len": [
       "warn",
       {
         "code": '${max_len_val}',
-        "tabWidth": 2,
+        "tabWidth": 4,
         "comments": '${max_len_val}',
         "ignoreComments": false,
         "ignoreTrailingComments": true,
