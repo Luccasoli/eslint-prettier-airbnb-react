@@ -56,7 +56,17 @@ Once files are created, you may edit to your liking.
 
 ```
 {
-"extends": [
+  parser: 'babel-eslint',
+  parserOptions: {
+      ecmaVersion: 6,
+      sourceType: 'module',
+      ecmaFeatures: {
+          jsx: true,
+          modules: true,
+          experimentalObjectRestSpread: true
+      }
+  },
+  "extends": [
     "airbnb",
     "plugin:prettier/recommended",
     "prettier/react"
@@ -75,7 +85,7 @@ Once files are created, you may edit to your liking.
       "warn",
       {
         "code": (SET BY USER),
-        "tabWidth": 2,
+        "tabWidth": 4,
         "comments": (SET BY USER),
         "ignoreComments": false,
         "ignoreTrailingComments": true,
