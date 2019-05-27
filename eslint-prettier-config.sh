@@ -121,14 +121,14 @@ else
   > ".eslintrc${config_extension}" # truncates existing file (or creates empty)
 
   echo ${config_opening}'
-  parser: 'babel-eslint',
-  parserOptions: {
-      ecmaVersion: 6,
-      sourceType: 'module',
-      ecmaFeatures: {
-          jsx: true,
-          modules: true,
-          experimentalObjectRestSpread: true
+  "parser": "babel-eslint",
+  "parserOptions": {
+     "ecmaVersion": 6,
+      "sourceType": "module",
+      "ecmaFeatures": {
+          "jsx": true,
+          "modules": true,
+          "experimentalObjectRestSpread": true
       }
   },
   "extends": [
